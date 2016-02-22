@@ -1,0 +1,21 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "a simple blog",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "real-time"
+  ],
+  "author": "Johnny Eric Amancio",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "bootflat": "^2.0.4",
+    "express": "^4.13.3",
+    "rethinkdb": "^2.1.1",
+    "socket.io": "^1.3.7"
+  }
+}
