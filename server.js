@@ -66,8 +66,7 @@ app.put('/tv_shows/:id',function(req,res){
 
 
 io.on('connection', function(socket){
-    users[socket.id] = 'New User';
-    //io.emit('user_entered', {msg:'oi',user:'john doe'}); 
+    users[socket.id] = 'Anonymous';
     io.emit('userList',users);
     console.log(socket.id);
     

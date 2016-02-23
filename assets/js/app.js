@@ -22,7 +22,7 @@ socket.on('userList',function(data){
     $('#user-list').html('');
     
     for(var key in data){
-        $('#user-list').append('<li>'+data[key]+'</li>');
+        $('#user-list').append('<li><span class="badge badge-success">&nbsp</span> '+data[key]+'</li>');
     }
    //console.log(data.user + data.msg); 
    

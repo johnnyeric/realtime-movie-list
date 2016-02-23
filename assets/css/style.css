@@ -2,3 +2,7 @@
     cursor: pointer;
     cursor: hand;
 }
+
+ul#user-list {
+    list-style-type: none;
+}
