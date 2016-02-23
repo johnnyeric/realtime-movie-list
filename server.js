@@ -75,6 +75,10 @@ io.on('connection', function(socket){
        io.emit('userList',users);
     });
     
+    socket.on('add_movie', function(data){
+        r.table('tv_shows').insert({'name':data.name}).run(conn);
+    });
+    
     socket.on('disconnect', function(data){
        delete users[this.id]; 
        io.emit('userList',users);

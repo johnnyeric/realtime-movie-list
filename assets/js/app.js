@@ -24,7 +24,6 @@ socket.on('userList',function(data){
     for(var key in data){
         $('#user-list').append('<li><span class="badge badge-success">&nbsp</span> '+data[key]+'</li>');
     }
-   //console.log(data.user + data.msg); 
    
 });
 
@@ -44,20 +43,7 @@ $(document).ready(function(){
     });
     $('#add').on('click',function(){
         var json = {name : $('#name').val()};
-        $.ajax({
-            type:'POST',
-            url: 'tv_shows',
-            contentType: 'application/json',
-            data: JSON.stringify(json),
-            success: function(data){
-                console.log(data);
-
-            },
-            error: function(err){
- 
-
-            }
-        });
+        socket.emit('add_movie',json); // faster, because there is already a connection, ajax creates http overhead as it creates a connection
         $('#name').val('');
     });
     
