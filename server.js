@@ -57,7 +57,7 @@ io.on('connection', function(socket){
         r.table('tv_shows').insert({'name':data.name}).run(conn, function(err, result) {
             if(err) throw err;
             var recent = {'user':users[socket.id], 'movie' : data.name, 'action' : 'add'};
-            io.emit('recent',recent);//'User '+users[socket.id] + ' added a movie called ' + data.name
+            io.emit('recent',recent);
         });
     });
     
@@ -65,7 +65,7 @@ io.on('connection', function(socket){
         r.table('tv_shows').get(data.id).delete().run(conn,function(err,result){
             if(err) throw err;
             var recent = {'user':users[socket.id], 'movie' : data.name, 'action' : 'del'};
-            io.emit('recent',recent);//'User '+users[socket.id] + ' added a movie called ' + data.name
+            io.emit('recent',recent);
         });
     });
     
