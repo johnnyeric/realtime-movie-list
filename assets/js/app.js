@@ -1,11 +1,7 @@
 var socket = io.connect('https://node-workspace-johnnyeric.c9users.io/');
-socket.on('ping', function(data){
-   console.log(data) ;
-    $('#tv_shows').append('<li>'+data+'</li>');
-});
 
 socket.on('add', function(data){
-    $('#tv_shows').append('<li class="list-group-item">'+data.name+'<span id="del_'+data.id+'" class="btn-delete badge badge-danger">delete</span><span class="badge badge-info">newly added</span></li>');
+    $('#tv_shows').append('<li class="list-group-item"><span data-field="name">'+data.name+'</span><span id="del_'+data.id+'" class="btn-delete badge badge-danger">delete</span><span class="badge badge-info">newly added</span></li>');
 
 });
 
@@ -18,13 +14,21 @@ socket.on('user_entered',function(data){
    $('#user-list').append('<li>'+data.user+'</li>');
 });
 
-socket.on('userList',function(data){
+socket.on('user_list',function(data){
     $('#user-list').html('');
     
     for(var key in data){
         $('#user-list').append('<li><span class="badge badge-success">&nbsp</span> '+data[key]+'</li>');
     }
    
+});
+
+socket.on('recent',function(data){
+    if($('#recent li').length >= 5){
+        $('#recent li:last-child').remove();
+    }
+    var actionMessage = data.action === 'add' ? 'added' : 'removed';
+    $('#recent').prepend('<li>User '+data.user + ' '+actionMessage + ' a movie called ' + data.movie+'</li>');
 });
 
 $(document).ready(function(){
@@ -35,7 +39,7 @@ $(document).ready(function(){
         success: function(data){
 
             $.each(data,function(idx,el){
-                $('#tv_shows').append('<li class="list-group-item">'+el.name+'<span id="del_'+el.id+'" class="btn-delete badge badge-danger">delete</span></li>');
+                $('#tv_shows').append('<li class="list-group-item"><span data-field="name">'+el.name+'</span><span id="del_'+el.id+'" class="btn-delete badge badge-danger">delete</span></li>');
             });
 
         }
@@ -55,20 +59,8 @@ $(document).ready(function(){
 
     $('body').on('click','.btn-delete',function(){
         var id = $(this).attr('id').replace('del_','');
-        $.ajax({
-            type:'PUT',
-            url: 'tv_shows/'+id,
-            success: function(data){
-                console.log(data);
-
-            },
-            error: function(err){
-                console.log(err);
-
-            }
-        });
-        
-
+        var name =  $(this).closest('li').find('[data-field=name]').html();
+        socket.emit('del_movie', {'id': id, 'name' : name});
     });
     
 });

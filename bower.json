@@ -1,0 +1,22 @@
+{
+  "name": "Movies App",
+  "description": "movies app",
+  "main": "server.js",
+  "authors": [
+    "Johnny Eric Amancio"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "real-time"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
