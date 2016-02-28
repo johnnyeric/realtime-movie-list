@@ -1,4 +1,4 @@
-var socket = io.connect('https://node-workspace-johnnyeric.c9users.io/');
+var socket = io.connect();
 
 socket.on('add', function(data){
     $('#tv_shows').append('<li class="list-group-item"><span data-field="name">'+data.name+'</span><span id="del_'+data.id+'" class="btn-delete badge badge-danger">delete</span><span class="badge badge-info">newly added</span></li>');
