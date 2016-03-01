@@ -10,17 +10,17 @@ socket.on('del',function(data){
 });
 
 socket.on('user_entered',function(data){
-   console.log(data.user + data.msg); 
+   console.log(data.user + data.msg);
    $('#user-list').append('<li>'+data.user+'</li>');
 });
 
 socket.on('user_list',function(data){
     $('#user-list').html('');
-    
+
     for(var key in data){
         $('#user-list').append('<li><span class="badge badge-success">&nbsp</span> '+data[key]+'</li>');
     }
-   
+
 });
 
 socket.on('recent',function(data){
@@ -50,7 +50,7 @@ $(document).ready(function(){
         socket.emit('add_movie',json); // faster, because there is already a connection, ajax creates http overhead as it creates a connection
         $('#name').val('');
     });
-    
+
      $('#setName').on('click',function(){
         var json = {name : $('#username').val()};
         socket.emit('change_name', json);
@@ -62,5 +62,5 @@ $(document).ready(function(){
         var name =  $(this).closest('li').find('[data-field=name]').html();
         socket.emit('del_movie', {'id': id, 'name' : name});
     });
-    
+
 });
