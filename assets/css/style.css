@@ -6,3 +6,58 @@
 ul#user-list {
     list-style-type: none;
 }
+
+body {
+		font-family: 'Open Sans Condensed', 'Raleway', Arial, sans-serif;
+		font-size: 14pt;
+		letter-spacing: 0.09em;
+		line-height: 1.65em;
+	}
+
+
+/* Banner */
+
+	#banner {
+		background-color: #3D9EA3;
+		color: #ffffff;
+		padding: 8em 0 6em 0;
+		text-align: center;
+	}
+
+  #banner h2 {
+    font-weight: 200;
+  }
+
+  #banner strong {
+    font-weight:bold;
+  }
+
+/* botão */
+
+  .button {
+		cursor: pointer;
+		display: inline-block;
+		height: 2.85em;
+		line-height: 2.95em;
+		padding: 0 1.5em;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+  button.special,
+  		.button.special {
+  			background-color: #407F7F;
+  			color: #ffffff !important;
+  		}
+
+  			button.special:hover,
+  			.button.special:hover {
+  				background-color: #3D9EA3;
+          border: 1px solid #fff;
+  			}
+
+  			button.special:active,
+  			.button.special:active {
+  				background-color: #00b4b5;
+  			}
