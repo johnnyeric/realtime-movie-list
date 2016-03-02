@@ -7,6 +7,8 @@ ul#user-list {
     list-style-type: none;
 }
 
+
+
 body {
 		font-family: 'Open Sans Condensed', 'Raleway', Arial, sans-serif;
 		font-size: 14pt;
@@ -14,7 +16,38 @@ body {
 		line-height: 1.65em;
 	}
 
+body h1 {
+    font-size: 2em;
+    text-transform: uppercase;
+}
+footer {
+  background-color: #0D4D4D;
+  padding: 4em 0 3em 0;
+  text-align: center;
 
+}
+footer p {
+    color: #fff;
+    font-size: .7em;
+    text-transform: uppercase;
+}
+
+footer a {
+    color: #fff;
+  }
+
+footer a:hover {
+    color: #B4ACAC;
+}
+
+#teste {
+  background-image: url("./../images/dead3.jpg");
+  background-repeat: no-repeat;
+  background-color: #000;
+  height:300px;
+  width:100%;
+
+}
 /* Banner */
 
 	#banner {
@@ -22,6 +55,9 @@ body {
 		color: #ffffff;
 		padding: 8em 0 6em 0;
 		text-align: center;
+    /*-webkit-box-shadow: 10px 10px -10px 10px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 10px 10px -10px 10px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 10px 10px -10px 10px rgba(0, 0, 0, 0.1) inset; */
 	}
 
   #banner h2 {
@@ -32,7 +68,18 @@ body {
     font-weight:bold;
   }
 
+  #box {
+    border: 1px solid #fff;
+    box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.3);
+    height: 200px;
+    margin: 0 auto;
+    outline: 1px solid #fff;
+    outline-offset: 3px;
+    width: 600px;
+  }
+
 /* botão */
+
 
   .button {
 		cursor: pointer;
@@ -61,3 +108,16 @@ body {
   			.button.special:active {
   				background-color: #00b4b5;
   			}
+
+  .btn-down {
+    margin-top: 30px;
+  }
+
+  .subtitle {
+    color: #BDBEBE;
+    font-family: 'Open Sans Condensed', 'Raleway', sans-serif;
+    font-size: 1.5em;
+    font-weight: 100;
+    margin-top: 100px;
+    text-transform: uppercase;
+}
