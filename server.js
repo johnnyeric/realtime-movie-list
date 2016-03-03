@@ -11,8 +11,8 @@ app.use('/assets',express.static('assets'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-server.listen(3000,"localhost",function(error){
-  console.log("Server listening on port 3000");
+server.listen(process.env.PORT || 3000, process.env.IP || "localhost",function(error){
+  console.log(`Server listening on port ${process.env.PORT | 3000}`);
 });
 var conn;
 

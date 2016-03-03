@@ -1,5 +1,4 @@
-
-
+@charset "UTF-8";
 
 
 ul#user-list {
@@ -104,6 +103,9 @@ hr {
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 	}
 
   button.special,
@@ -121,10 +123,21 @@ hr {
   			button.special:active,
   			.button.special:active {
   				background-color: #00b4b5;
+          -webkit-transition: all .3s ease-in-out;
+          -moz-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
   			}
 
   .btn-down {
     margin-top: 30px;
+  }
+
+  .btn-primary {
+    background-color: #3D9EA3;
+  }
+  .btn-primary:hover {
+    background-color: #0D4D4D;
+    border: 1px solid #0D4D4D;
   }
 
   .container {
