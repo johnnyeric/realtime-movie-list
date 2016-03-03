@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Real-time Movie List</title>
+        <link rel="shortcut icon" href="assets/images/icon.png" type="image/png">
         <link rel="stylesheet" href="assets/bootflat/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/bootflat/css/bootflat.css">
         <link rel="stylesheet" href="assets/css/style.css">
@@ -9,25 +10,36 @@
     </head>
 
     <!-- Banner -->
-    <div class="row">
-      <section id="banner">
-        <h2><strong>REALTIME MOVIE LIST</strong> é a lista de filmes favoritos da vida.</h2>
-        <p>Fácil! Cadastre seu nome e liste seu filme favorito!</p>
-        <a href="#" class="button special">Começar</a></li>
-      </section>
-    </div>
+    <body>
+      <div class="container-fluid">
+        <div class="row">
+          <section id="banner">
+            <div id="box">
+              <h2><strong>REALTIME MOVIE LIST</strong> é a lista de filmes favoritos da vida.</h2>
+              <p>Fácil! Cadastre seu nome e liste seu filme preferido!</p>
+            </div>
+            <p class="subtitle">lorem ipsum dolor sit amet</p>
+            <a href="#add" class="button special btn-down">Começar</a></li>
+          </section>
+        </div>
+      </div>
 
+    <div id="bcg"></div>
 
+      <section class="container">
+          <div class="row">
+              <h4>Add movie</h4>
+              <input id="name" type="text" name="name"></input>
+              <a id="add" class="btn btn-primary">Add</a>
 
-
-
-
-
-
-
-
-        <section class="container">
-
+              <div class="pull-right">
+                  <label for="username">Username</label>
+                  <input id="username" type="text" name="username"></input>
+                  <a id="setName" class="btn btn-success">Change</a>
+              </div>
+          </div>
+          <hr>
+          <article>
             <h1>Movies</h1>
 
             <ul id="user-list" class="list-group">
@@ -42,25 +54,14 @@
                 <ul id="recent" class="list-group">
 
                 </ul>
-
             </div>
-
-            <div>
-
-                <h4>Add movie</h4>
-                <input id="name" type="text" name="name"></input>
-                <a id="add" class="btn btn-primary">Add</a>
-
-                <div class="pull-right">
-                    <label for="username">Username</label>
-                    <input id="username" type="text" name="username"></input>
-                    <a id="setName" class="btn btn-success">Change</a>
-                </div>
-            </div>
-
-
+          </article>
         </section>
 
+
+        <footer>
+          <p> Desenvolvimento <a href="https://github.com/johnnyeric/">Johnny Eric</a> e <a href="https://github.com/larirabello">Lari Rabello</a></p>
+        </footer>
 
         <!-- Bootstrap -->
         <script src="assets/bootflat/js/jquery-1.10.1.min.js"></script>

@@ -11,7 +11,9 @@ app.use('/assets',express.static('assets'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-server.listen(process.env.PORT,process.env.IP);
+server.listen(process.env.PORT || 3000, process.env.IP || "localhost",function(error){
+  console.log(`Server listening on port ${process.env.PORT | 3000}`);
+});
 var conn;
 
 var p = r.connect({host: 'localhost',port:28015});
@@ -25,11 +27,11 @@ p.then(function(c){
             }else{
                 io.emit('del',el.old_val);
             }
-            
+
         });
     });
 });
- 
+
 app.get('/',function(req,res){
     res.sendFile(__dirname + '/assets/html/index.html');
 });
@@ -47,12 +49,12 @@ io.on('connection', function(socket){
     users[socket.id] = 'Anonymous';
     io.emit('user_list',users);
     console.log(socket.id);
-    
+
     socket.on('change_name', function(data){
        users[this.id] = data.name;
        io.emit('user_list',users);
     });
-    
+
     socket.on('add_movie', function(data){
         r.table('tv_shows').insert({'name':data.name}).run(conn, function(err, result) {
             if(err) throw err;
@@ -60,7 +62,7 @@ io.on('connection', function(socket){
             io.emit('recent',recent);
         });
     });
-    
+
     socket.on('del_movie', function(data){
         r.table('tv_shows').get(data.id).delete().run(conn,function(err,result){
             if(err) throw err;
@@ -68,9 +70,9 @@ io.on('connection', function(socket){
             io.emit('recent',recent);
         });
     });
-    
+
     socket.on('disconnect', function(data){
-       delete users[this.id]; 
+       delete users[this.id];
        io.emit('user_list',users);
     });
 });
