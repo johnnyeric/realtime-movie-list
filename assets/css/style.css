@@ -1,7 +1,6 @@
-.btn-delete {
-    cursor: pointer;
-    cursor: hand;
-}
+
+
+
 
 ul#user-list {
     list-style-type: none;
@@ -46,7 +45,8 @@ hr {
     margin-top: 100px;
 }
 
-/* Banner */
+/* IDs */
+
 
 	#banner {
 		background-color: #3D9EA3;
@@ -85,6 +85,14 @@ hr {
     width: 600px;
   }
 
+
+/* CLASSES */
+
+
+  .btn-delete {
+      cursor: pointer;
+      cursor: hand;
+  }
 /* botão */
 
   .button {
