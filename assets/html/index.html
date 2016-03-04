@@ -19,7 +19,7 @@
               <p>Fácil! Cadastre seu nome e liste seu filme preferido!</p>
             </div>
             <p class="subtitle">lorem ipsum dolor sit amet</p>
-            <a href="#add" class="button special btn-down">Começar</a></li>
+            <a href="#link" class="button special btn-down">Começar</a></li>
           </section>
         </div>
       </div>
@@ -28,6 +28,7 @@
 
       <section class="container">
           <div class="row">
+              <h3 id="link" class="subtitle">Para adicionar um novo filme basta preencher abaixo!</h3>
               <h4>Add movie</h4>
               <input id="name" type="text" name="name"></input>
               <a id="add" class="btn btn-primary">Add</a>
@@ -39,23 +40,37 @@
               </div>
           </div>
           <hr>
-          <article>
-            <h1>Movies</h1>
+        </section>
 
-            <ul id="user-list" class="list-group">
+        <section class="container-fluid">
+          <div class="row">
 
-            </ul>
-
-            <div>
-                 <ul id="tv_shows" class="list-group">
-
-                </ul>
-
-                <ul id="recent" class="list-group">
-
-                </ul>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+              <aside>
+                <h4>Current User</h4>
+                <ul id="user-list" class="list-group pull-left">
+              </aside>
             </div>
-          </article>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <article>
+                <h1>Movies</h1>
+                <div>
+                     <ul id="tv_shows" class="list-group">
+
+                    </ul>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+              <h4>Last Actions </h4>
+              <ul id="recent" class="list-group">
+
+              </ul>
+            </div>
+
+         </div> <!-- fecha a row -->
         </section>
 
 

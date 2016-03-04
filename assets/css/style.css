@@ -6,8 +6,10 @@ ul#user-list {
 }
 
 article {
-      margin: 20px auto;
-      padding-top: 50px;
+      margin: 0px auto;
+      padding: 0 10px;
+      margin-bottom: 100px;
+
 }
 
 body {
@@ -44,6 +46,10 @@ hr {
     margin-top: 100px;
 }
 
+ul {
+  list-style-image: url("./../images/icon.png");
+}
+
 /* IDs */
 
 
@@ -66,7 +72,7 @@ hr {
   }
 
   #bcg {
-    background-image: url("./../images/dead3.jpg");
+    background-image: url("./../images/avengers1800.png");
     background-repeat:no-repeat;
     background-color: #000;
     background-size: 100% 100%;
@@ -86,7 +92,6 @@ hr {
 
 
 /* CLASSES */
-
 
   .btn-delete {
       cursor: pointer;
@@ -142,8 +147,9 @@ hr {
 
   .container {
     padding-bottom: 5%;
-    padding-top: 5%;
+    padding-top: 1%;
   }
+
 
   .subtitle {
     color: #BDBEBE;
@@ -152,4 +158,8 @@ hr {
     font-weight: 100;
     margin-top: 100px;
     text-transform: uppercase;
+}
+.subtitle h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
