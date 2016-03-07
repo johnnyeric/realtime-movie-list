@@ -1,5 +1,5 @@
 {
-  "name": "blog",
+  "name": "realtime-movie-list",
   "version": "1.0.0",
   "description": "a simple blog",
   "main": "server.js",
@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
     "mocha": "^2.4.5",
     "supertest": "^1.2.0"
   }

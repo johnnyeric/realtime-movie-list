@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var users = {};
 
-app.use('/assets',express.static('assets'));
+app.use('/public',express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
@@ -33,7 +33,7 @@ p.then(function(c){
 });
 
 app.get('/',function(req,res){
-    res.sendFile(__dirname + '/assets/html/index.html');
+    res.sendFile(__dirname + '/public/html/index.html');
 });
 
 app.get('/tv_shows',function(req,res){
